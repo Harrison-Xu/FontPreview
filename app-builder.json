@@ -1,16 +1,16 @@
 {
   "package_name": "fontpreview",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "app_name": "FontPreview",
   "bin_name": "fontpreview",
-  "description": "Preview multilingual text with Noto CJK, Go, Inter, DejaVu, and JetBrains Mono.",
+  "description": "Preview existing system fonts on CardputerZero without installing additional fonts.",
   "runtime": "legacy-deb-only",
   "caps": [
     "keyboard"
   ],
   "store": {
-    "summary": "Preview multilingual text with five font families.",
-    "description": "A focused typography preview for CardputerZero. Compare nine languages and code with five font families, six typeface styles, 8–24 px sizes, three weights, and eight color schemes.",
+    "summary": "Preview multilingual text using existing system fonts.",
+    "description": "A focused typography preview for CardputerZero. Compare nine languages and code using installed system fonts, six typeface styles, 8–24 px sizes, three weights, and eight color schemes. Supports Noto CJK, Go, Inter, DejaVu, and JetBrains Mono when present on the system. No fonts are bundled, downloaded, or installed; unavailable faces are reported in the preview.",
     "categories": [
       "System Tools"
     ],
@@ -21,18 +21,18 @@
     "locales": {
       "zh-CN": {
         "title": "字体预览",
-        "summary": "预览五种字体的多语言、字号和字重效果。",
-        "description": "专为 CardputerZero 设计的字体预览应用。可用九种语言和代码内容比较五种字体、六种字体形态、8–24 px 字号、三种字重和八种配色。"
+        "summary": "预览系统已有字体的多语言、字号和字重效果。",
+        "description": "专为 CardputerZero 设计的字体预览应用。使用系统已有字体比较九种语言和代码、六种字体形态、8–24 px 字号、三种字重和八种配色。支持系统中已存在的 Noto CJK、Go、Inter、DejaVu 和 JetBrains Mono。不附带、下载或安装任何字体；系统缺少的字体形态会在预览区提示。"
       },
       "en": {
         "title": "FontPreview",
-        "summary": "Preview multilingual text with five font families.",
-        "description": "A focused typography preview for CardputerZero. Compare nine languages and code with five font families, six typeface styles, 8–24 px sizes, three weights, and eight color schemes."
+        "summary": "Preview multilingual text using existing system fonts.",
+        "description": "A focused typography preview for CardputerZero. Compare nine languages and code using installed system fonts, six typeface styles, 8–24 px sizes, three weights, and eight color schemes. Supports Noto CJK, Go, Inter, DejaVu, and JetBrains Mono when present on the system. No fonts are bundled, downloaded, or installed; unavailable faces are reported in the preview."
       },
       "ja": {
         "title": "フォントプレビュー",
-        "summary": "5 種類のフォントで多言語表示を確認できます。",
-        "description": "CardputerZero 向けのフォントプレビューアプリです。9 言語とコードを5種類のフォント、6種類の書体、8～24 px、3ウェイト、8配色で比較できます。"
+        "summary": "システムにあるフォントで多言語表示を確認できます。",
+        "description": "CardputerZero 向けのフォントプレビューアプリです。システムにあるフォントを使い、9言語とコードを6種類の書体、8～24 px、3ウェイト、8配色で比較できます。Noto CJK、Go、Inter、DejaVu、JetBrains Mono がシステムにある場合に対応します。フォントの同梱・ダウンロード・インストールは行わず、利用できない書体はプレビューに表示します。"
       }
     },
     "license": "MIT",

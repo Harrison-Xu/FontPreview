@@ -176,7 +176,7 @@ void PreviewScreen::refresh() {
     if (!preview_font) {
         LOG_ERROR("failed to load preview font: {} at {}px", model_.font_file_name(), model_.font_size());
         lv_obj_set_style_text_font(sample_, ui_message_, 0);
-        lv_label_set_text(sample_, "Font file missing.\nInstall the required Debian font package.");
+        lv_label_set_text(sample_, "This font face is not available on this system.");
         position_sample();
         assets_.release_unused_fonts({ui_small_, ui_regular_, ui_bold_, ui_message_});
         return;

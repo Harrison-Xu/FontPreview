@@ -2,12 +2,12 @@
 
 A 320×170 typography preview application for CardputerZero, built with C++17, LVGL 9.5, SDL2, and FreeType.
 
-The screen has a compact parameter panel on the left and a scrollable, full-height text preview on the right. Interface labels use Noto CJK; on CardputerZero all five font families are loaded from Debian system packages.
+The screen has a compact parameter panel on the left and a scrollable, full-height text preview on the right. Interface labels use Noto CJK; on CardputerZero fonts are read directly from the existing system image. The app does not bundle, download, install, or recommend installing fonts.
 
 ## Preview options
 
 - Preview content: Simplified Chinese, Traditional Chinese, Japanese, Korean, English, Portuguese, Czech, Greek, Russian, and Code
-- Fonts: Noto CJK, Go, Inter, DejaVu, and JetBrains Mono
+- Supported font families: Noto CJK, Go, Inter, DejaVu, and JetBrains Mono, when present on the system
 - Typefaces: Sans, Sans Italic, Serif, Serif Italic, Mono, and Mono Italic
 - Sizes: 8–24 px in 1 px steps, stopping at either boundary; hold Left/Right for rapid adjustment
 - Weights: Light, Regular, and Bold. Light is available for Inter and JetBrains Mono.
@@ -33,7 +33,7 @@ Arcade feedback is always enabled when the audio device is available. The PCM WA
 
 ## Fonts
 
-On CardputerZero, the application loads the complete Regular and Bold Noto CJK faces from the system `fonts-noto-cjk` package:
+On CardputerZero, the interface and default preview use the Noto CJK files already supplied by the system image:
 
 - `/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc`
 - `/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc`
@@ -46,7 +46,9 @@ The application selects the correct regional face inside each collection: JP for
 
 The fonts are licensed under the SIL Open Font License 1.1. Installed CardputerZero fonts and their copyright information are managed by Debian's `fonts-noto-cjk` package.
 
-Go, Inter, DejaVu, and JetBrains Mono are also loaded from their standard Debian system paths. Only `fonts-noto-cjk` is a required font dependency because it supplies the interface and default preview. Go, Inter, DejaVu, and JetBrains Mono are optional: existing system files are used, and a missing face is reported in the preview without blocking installation. The package suggests `fonts-go`, `fonts-inter`, `fonts-dejavu-core`, `fonts-dejavu-extra`, and `fonts-jetbrains-mono`; it does not request their installation automatically. DejaVu Mono is included in `fonts-dejavu-core` on Debian Bookworm, and pulled in by that package on Trixie. There is no unconditional dependency on `fonts-dejavu-mono`, which is unavailable on Bookworm. Inter and JetBrains Mono provide native Light and Light Italic files; the other configured families do not provide a Light face. Unsupported combinations are reported directly in the preview—for example, Inter does not provide Serif or Mono faces. Noto CJK italic selections use FreeType's synthetic italic rendering because Noto CJK does not ship native italic faces.
+Go, Inter, DejaVu, and JetBrains Mono are read from their existing Debian system paths. The app declares no font packages in `Depends`, `Recommends`, or `Suggests`. It only previews faces already present on the device: unavailable files are reported in the preview, and unsupported typeface/weight combinations remain explicit rather than silently substituting another font. The system image must supply the Noto CJK Sans Regular and Bold files needed by the interface; missing Serif or other preview faces do not prevent startup. No font installation is performed to repair an incomplete system image.
+
+Inter and JetBrains Mono support Light and Light Italic when those files exist. Noto CJK italic selections use FreeType's synthetic italic rendering because Noto CJK does not ship native italic faces.
 
 ## Character coverage
 
@@ -70,19 +72,19 @@ cmake --build --preset cp0-cross-rel
 cpack --preset cp0-cross-deb
 ```
 
-The package is written to `dist/fontpreview_0.4.4-m5stack1_arm64.deb` and uses the system font packages listed above without installing duplicate font files.
+The package is written to `dist/fontpreview_0.4.5-1_arm64.deb` and only reads fonts already on the device.
 
 ## Installation and publishing
 
 The package has no maintainer scripts or background services. It does not run
 font downloads, update font caches, or start the application during installation.
-Its required libraries and Noto CJK are resolved by the system package manager.
-Go, Inter, and extra font faces can be installed separately when wanted.
+Only runtime libraries are declared as package dependencies. No font packages
+are required or suggested; the system's existing fonts are left untouched.
 
 If a store installation stalls while downloading or resolving dependencies,
 check the device's network, configured APT repositories, available storage, and
 package-manager output. From a device terminal, installing a copied package with
-`sudo apt install ./fontpreview_0.4.4-m5stack1_arm64.deb` exposes the actual error.
+`sudo apt install ./fontpreview_0.4.5-1_arm64.deb` exposes the actual error.
 Do not run a second installation while another package-manager process is active.
 The application itself should be launched as the normal user.
 
@@ -91,13 +93,20 @@ The existing share code `FONT` is retained. To submit the rebuilt package, run
 this command from the project root:
 
 ```shell
-~/M5Stack_Repos/AppBuilder/czdev publish --deb ./dist/fontpreview_0.4.4-m5stack1_arm64.deb
+~/M5Stack_Repos/AppBuilder/czdev publish --deb ./dist/fontpreview_0.4.5-1_arm64.deb
 ```
+
+## 0.4.5 changes
+
+- Use only fonts already present in the system image; remove all font package dependencies and suggestions.
+- Report unavailable system faces without asking users to install fonts.
+- Allow startup when Noto Serif preview files are absent, as long as the interface fonts are present.
+- Replace the vendor suffix with ordinary Debian revision `1`, producing `0.4.5-1`.
 
 ## 0.4.4 changes
 
 - Complete store metadata with the current category, seven permissions, author, and existing share code.
-- Keep system fonts and make nonessential font packages optional to reduce installation dependencies.
+- Reduce installation dependencies and preserve system font lookup.
 - Play the same four WAV cues through SDL2 without SDL_mixer or its codec/soundfont dependencies.
 - Release preview fonts after switching faces or sizes; keep the interface fonts and active preview in memory.
 - Use the standard lowercase Debian filename and document the external fonts needed for a desktop preview.

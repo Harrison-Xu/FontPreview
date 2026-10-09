@@ -103,10 +103,12 @@ std::filesystem::path AssetManager::resolve_font(const std::filesystem::path& fi
         return resolve(file_name);
     }
 
-    auto bundled_font = resolve(std::filesystem::path{"fonts"} / file_name);
-    if (!bundled_font.empty()) {
-        return bundled_font;
+#if USE_DESKTOP
+    auto desktop_font = resolve(std::filesystem::path{"fonts"} / file_name);
+    if (!desktop_font.empty()) {
+        return desktop_font;
     }
+#endif
 
     auto system_font = std::filesystem::path{kSystemNotoFontDirectory} / file_name;
     if (path_exists(system_font)) {

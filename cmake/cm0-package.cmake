@@ -7,10 +7,10 @@
 include(GNUInstallDirs)
 
 set(APP_DISPLAY_NAME "FontPreview" CACHE STRING "Human-readable application name used by launchers and package filename" FORCE)
-set(APP_DEBIAN_REVISION "m5stack1" CACHE STRING "Debian package revision/vendor suffix" FORCE)
+set(APP_DEBIAN_REVISION "1" CACHE STRING "Debian package revision" FORCE)
 set(APP_DEBIAN_ARCHITECTURE "arm64" CACHE STRING "Debian package architecture")
 set(APP_MAINTAINER "XuHaifeng <Harrison-Xu@users.noreply.github.com>" CACHE STRING "Debian package maintainer")
-set(APP_PACKAGE_DESCRIPTION "Multilingual font and typeface preview for CardputerZero" CACHE STRING "Debian package summary" FORCE)
+set(APP_PACKAGE_DESCRIPTION "Preview existing system fonts on CardputerZero" CACHE STRING "Debian package summary" FORCE)
 
 set(APP_GENERATED_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated/package")
 configure_file(
@@ -69,11 +69,11 @@ set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "${APP_DEBIAN_ARCHITECTURE}")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${APP_MAINTAINER}")
 set(CPACK_DEBIAN_PACKAGE_SECTION "utils")
 set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
-# Only Noto CJK is needed to start. Other families stay selectable and report
-# missing files in the UI, so they must not block installation on a base image.
-# DejaVu Mono is in fonts-dejavu-core on Bookworm, but a separate package on Trixie.
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.34), libstdc++6 (>= 9), libgcc-s1, libfreetype6, libpng16-16 | libpng16-16t64, zlib1g, libsdl2-2.0-0 (>= 2.0.4), fonts-noto-cjk")
-set(CPACK_DEBIAN_PACKAGE_SUGGESTS "fonts-go, fonts-inter, fonts-dejavu-core, fonts-dejavu-extra, fonts-jetbrains-mono")
+# Fonts belong to the device's system image. Never pull in font packages when
+# installing this app, including through optional dependency declarations.
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.34), libstdc++6 (>= 9), libgcc-s1, libfreetype6, libpng16-16 | libpng16-16t64, zlib1g, libsdl2-2.0-0 (>= 2.0.4)")
+unset(CPACK_DEBIAN_PACKAGE_SUGGESTS)
+unset(CPACK_DEBIAN_PACKAGE_RECOMMENDS)
 set(CPACK_DEBIAN_PACKAGE_CONFLICTS "notocjkpreview")
 set(CPACK_DEBIAN_PACKAGE_REPLACES "notocjkpreview")
 set(CPACK_DEBIAN_PACKAGE_PROVIDES "notocjkpreview")

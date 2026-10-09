@@ -165,19 +165,6 @@ int Application::run() {
         LOG_INFO("asset root: {}", root.string());
     }
 
-    constexpr const char* kRequiredFonts[] = {
-        "NotoSansCJK-Regular.ttc",
-        "NotoSansCJK-Bold.ttc",
-        "NotoSerifCJK-Regular.ttc",
-        "NotoSerifCJK-Bold.ttc",
-    };
-    for (const auto* font : kRequiredFonts) {
-        if (assets_.resolve_font(font).empty()) {
-            LOG_ERROR("required Noto CJK font is missing: {}", font);
-            return 1;
-        }
-    }
-
     sound_player_.initialize();
 
     screen_ = std::make_unique<view::PreviewScreen>(model_, assets_, sound_player_);
