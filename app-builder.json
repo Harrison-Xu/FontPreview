@@ -1,6 +1,6 @@
 {
   "package_name": "fontpreview",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "app_name": "FontPreview",
   "bin_name": "fontpreview",
   "description": "Preview multilingual text with Noto CJK, Go, Inter, DejaVu, and JetBrains Mono.",
@@ -12,7 +12,7 @@
     "summary": "Preview multilingual text with five font families.",
     "description": "A focused typography preview for CardputerZero. Compare nine languages and code with five font families, six typeface styles, 8–24 px sizes, three weights, and eight color schemes.",
     "categories": [
-      "Utilities"
+      "System Tools"
     ],
     "icon": "assets/images/fontpreview.png",
     "screenshots": [
@@ -37,13 +37,19 @@
     },
     "license": "MIT",
     "source_repo": "https://github.com/Harrison-Xu/FontPreview",
+    "author": {
+      "display_name": "XuHaifeng",
+      "github": "Harrison-Xu"
+    },
+    "share_code": "FONT",
     "permissions": {
+      "camera": false,
       "microphone": false,
-      "audio_output": true,
+      "imu": false,
       "network": false,
-      "keyboard_input": true,
+      "additional_hardware": false,
       "background_service": false,
-      "external_hardware": false
+      "external_display": false
     }
   }
 }

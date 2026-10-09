@@ -1,6 +1,6 @@
 {
-  "name": "status-deck-simulator-on-windows",
-  "version": "1.0.0",
+  "name": "fontpreview",
+  "version": "0.4.4",
   "dependencies": [
     "libpng",
     "libjpeg-turbo",

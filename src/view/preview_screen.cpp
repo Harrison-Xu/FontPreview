@@ -167,6 +167,7 @@ void PreviewScreen::refresh() {
         lv_label_set_text_fmt(sample_, "%s has no %s %s face.", model_.font_name(), model_.weight_name(),
                               model_.typeface_name());
         position_sample();
+        assets_.release_unused_fonts({ui_small_, ui_regular_, ui_bold_, ui_message_});
         return;
     }
 
@@ -177,12 +178,14 @@ void PreviewScreen::refresh() {
         lv_obj_set_style_text_font(sample_, ui_message_, 0);
         lv_label_set_text(sample_, "Font file missing.\nInstall the required Debian font package.");
         position_sample();
+        assets_.release_unused_fonts({ui_small_, ui_regular_, ui_bold_, ui_message_});
         return;
     }
 
     lv_obj_set_style_text_font(sample_, preview_font, 0);
     lv_label_set_text(sample_, model_.sample_text());
     position_sample();
+    assets_.release_unused_fonts({ui_small_, ui_regular_, ui_bold_, ui_message_, preview_font});
 }
 
 void PreviewScreen::apply_colors() {

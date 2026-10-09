@@ -179,4 +179,16 @@ void AssetManager::add_root_if_valid(std::filesystem::path path) {
     }
 }
 
+void AssetManager::release_unused_fonts(std::initializer_list<const lv_font_t*> retained) {
+#if LV_USE_FREETYPE
+    loaded_fonts_.erase(std::remove_if(loaded_fonts_.begin(), loaded_fonts_.end(), [&](const auto& loaded) {
+        if (std::find(retained.begin(), retained.end(), loaded->font) != retained.end()) return false;
+        lv_freetype_font_delete(loaded->font);
+        return true;
+    }), loaded_fonts_.end());
+#else
+    LV_UNUSED(retained);
+#endif
+}
+
 } // namespace app

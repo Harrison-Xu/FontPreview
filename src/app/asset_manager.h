@@ -10,6 +10,7 @@
 
 #include <cstdint>
 #include <filesystem>
+#include <initializer_list>
 #include <memory>
 #include <string>
 #include <vector>
@@ -36,6 +37,8 @@ public:
                          uint32_t size,
                          bool synthetic_italic = false,
                          uint32_t face_index = 0);
+    // Call after labels have switched fonts; retain only fonts still in use.
+    void release_unused_fonts(std::initializer_list<const lv_font_t*> retained);
 
 private:
     struct LoadedFont;

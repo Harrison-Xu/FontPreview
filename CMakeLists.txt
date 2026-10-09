@@ -6,7 +6,7 @@
 
 cmake_minimum_required(VERSION 3.31)
 
-project(fontpreview VERSION 0.4.3 LANGUAGES C CXX)
+project(fontpreview VERSION 0.4.4 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -38,6 +38,12 @@ include(FetchContent)
 set(CONFIG_LV_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(CONFIG_LV_BUILD_DEMOS    OFF CACHE BOOL "" FORCE)
 set(LV_BUILD_CONF_PATH "${PROJECT_SOURCE_DIR}/src/config/lv_conf.h" CACHE PATH "" FORCE)
+
+if(FETCHCONTENT_SOURCE_DIR_LVGL AND
+   NOT EXISTS "${FETCHCONTENT_SOURCE_DIR_LVGL}/CMakeLists.txt")
+    message(STATUS "Discarding missing cached LVGL source override: ${FETCHCONTENT_SOURCE_DIR_LVGL}")
+    unset(FETCHCONTENT_SOURCE_DIR_LVGL CACHE)
+endif()
 
 if(NOT FETCHCONTENT_SOURCE_DIR_LVGL)
     foreach(LVGL_SOURCE_HINT IN ITEMS
@@ -111,10 +117,9 @@ if(USE_DESKTOP)
     find_package(SDL2 CONFIG REQUIRED)
 
     # =========================
-    # SDL2_mixer
+    # PCM WAV cues use SDL2 directly, without codec/soundfont dependencies.
     # =========================
-    find_package(SDL2_mixer CONFIG REQUIRED)
-    set(APP_AUDIO_LIBS SDL2_mixer::SDL2_mixer)
+    set(APP_AUDIO_LIBS SDL2::SDL2)
 
     # =========================
     # ZLIB
@@ -274,15 +279,6 @@ else()
     endif()
     cm0_add_imported_library(CM0::PNG "${PNG_LIBRARY}" "${PNG_INCLUDE_DIR}")
 
-    cm0_find_header(JPEG_INCLUDE_DIR jpeglib.h
-        "${CM0_SYSROOT}/usr/include"
-    )
-    cm0_find_library(JPEG_LIBRARY jpeg)
-    if(NOT JPEG_INCLUDE_DIR OR NOT JPEG_LIBRARY)
-        message(FATAL_ERROR "Missing JPEG header/library in BSP sysroot: ${CM0_SYSROOT}")
-    endif()
-    cm0_add_imported_library(CM0::JPEG "${JPEG_LIBRARY}" "${JPEG_INCLUDE_DIR}")
-
     cm0_find_header(ZLIB_INCLUDE_DIR zlib.h
         "${CM0_SYSROOT}/usr/include"
     )
@@ -309,21 +305,17 @@ else()
     cm0_find_library(PTHREAD_LIBRARY pthread libpthread.so.0 libpthread.a)
     cm0_find_library(M_LIBRARY m libm.so libm.so.6 libm.a)
     cm0_find_library(SDL2_LIBRARY SDL2-2.0 libSDL2-2.0.so.0)
-    cm0_find_library(SDL2_MIXER_LIBRARY SDL2_mixer-2.0 libSDL2_mixer-2.0.so.0)
     if(NOT PTHREAD_LIBRARY)
         message(FATAL_ERROR "Missing pthread library in BSP sysroot: ${CM0_SYSROOT}")
     endif()
     if(NOT M_LIBRARY)
         message(FATAL_ERROR "Missing math library in BSP sysroot: ${CM0_SYSROOT}")
     endif()
-    if(NOT SDL2_LIBRARY OR NOT SDL2_MIXER_LIBRARY)
-        message(FATAL_ERROR "Missing SDL2/SDL2_mixer runtime library in BSP sysroot: ${CM0_SYSROOT}")
+    if(NOT SDL2_LIBRARY)
+        message(FATAL_ERROR "Missing SDL2 runtime library in BSP sysroot: ${CM0_SYSROOT}")
     endif()
-
     cm0_add_imported_library(CM0::SDL2 "${SDL2_LIBRARY}" "")
-    cm0_add_imported_library(CM0::SDL2Mixer "${SDL2_MIXER_LIBRARY}" "")
-    set_target_properties(CM0::SDL2Mixer PROPERTIES INTERFACE_LINK_LIBRARIES CM0::SDL2)
-    set(APP_AUDIO_LIBS CM0::SDL2Mixer CM0::SDL2)
+    set(APP_AUDIO_LIBS CM0::SDL2)
 
     set(PLATFORM_INCLUDE_DIR ${CM0_MULTIARCH_INCLUDE_DIRS})
     set(PLATFORM_LIBS ${PTHREAD_LIBRARY} ${M_LIBRARY})
@@ -331,13 +323,11 @@ else()
     set(LVGL_INCLUDE_DIR
         ${FREETYPE_INCLUDE_DIR}
         ${PNG_INCLUDE_DIR}
-        ${JPEG_INCLUDE_DIR}
         ${ZLIB_INCLUDE_DIR}
     )
     set(LVGL_LIBS
         CM0::Freetype
         CM0::PNG
-        CM0::JPEG
         ZLIB::ZLIB
     )
     if(APP_USE_DRM)
@@ -475,6 +465,13 @@ target_link_libraries(${PROJECT_NAME}_view
 # - UI asset management
 # - Project logger
 # ====================================================
+if(USE_DESKTOP)
+    target_compile_definitions(${PROJECT_NAME}_view PRIVATE
+        APP_CMAKE_ASSETS_ROOT="${APP_ASSETS_ROOT}"
+        APP_SOURCE_ASSETS_ROOT="${CMAKE_CURRENT_SOURCE_DIR}/assets"
+    )
+endif()
+
 file(GLOB_RECURSE APP_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/app/*.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/app/*.cpp"
@@ -551,3 +548,15 @@ target_link_libraries(${PROJECT_NAME}
 
 # Package deb
 include(cmake/cm0-package.cmake)
+
+option(FONTPREVIEW_BUILD_TESTS "Build desktop audio and font regression checks" OFF)
+set(FONTPREVIEW_TEST_FONT "" CACHE FILEPATH "Locally installed font for cache regression checks")
+if(USE_DESKTOP AND FONTPREVIEW_BUILD_TESTS)
+    enable_testing()
+    add_executable(fontpreview_regression tests/runtime_regression.cpp)
+    target_link_libraries(fontpreview_regression PRIVATE ${PROJECT_NAME}_core)
+    add_test(NAME runtime_regression COMMAND fontpreview_regression
+        "${CMAKE_CURRENT_SOURCE_DIR}/assets" "${FONTPREVIEW_TEST_FONT}")
+    set_tests_properties(runtime_regression PROPERTIES
+        ENVIRONMENT "SDL_AUDIODRIVER=dummy" TIMEOUT 30)
+endif()

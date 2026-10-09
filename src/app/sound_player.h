@@ -7,8 +7,7 @@
 
 #include <array>
 #include <cstddef>
-
-struct Mix_Chunk;
+#include <cstdint>
 
 namespace app {
 
@@ -38,10 +37,14 @@ private:
     void shutdown();
 
     AssetManager& assets_;
-    std::array<Mix_Chunk*, static_cast<std::size_t>(SoundCue::Count)> chunks_{};
+    struct Cue {
+        uint8_t* data{nullptr};
+        uint32_t length{0};
+    };
+    std::array<Cue, static_cast<std::size_t>(SoundCue::Count)> cues_{};
     bool available_{false};
     bool audio_subsystem_initialized_{false};
-    bool mixer_open_{false};
+    uint32_t device_{0};
 };
 
 } // namespace app

@@ -57,7 +57,7 @@ set(CPACK_PACKAGE_VENDOR "XuHaifeng")
 set(CPACK_PACKAGE_CONTACT "${APP_MAINTAINER}")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${APP_PACKAGE_DESCRIPTION}")
 set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
-set(CPACK_PACKAGE_FILE_NAME "${APP_DISPLAY_NAME}_${PROJECT_VERSION}_${APP_DEBIAN_REVISION}_${APP_DEBIAN_ARCHITECTURE}")
+set(CPACK_PACKAGE_FILE_NAME "fontpreview_${PROJECT_VERSION}-${APP_DEBIAN_REVISION}_${APP_DEBIAN_ARCHITECTURE}")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 
 string(TOLOWER "${APP_DISPLAY_NAME}" APP_DEBIAN_PACKAGE_NAME)
@@ -69,7 +69,11 @@ set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "${APP_DEBIAN_ARCHITECTURE}")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${APP_MAINTAINER}")
 set(CPACK_DEBIAN_PACKAGE_SECTION "utils")
 set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6, libstdc++6, libgcc-s1, libfreetype6, libpng16-16, libjpeg62-turbo, zlib1g, libsdl2-2.0-0, libsdl2-mixer-2.0-0, fonts-noto-cjk, fonts-go, fonts-inter, fonts-dejavu-core, fonts-dejavu-extra, fonts-dejavu-mono, fonts-jetbrains-mono")
+# Only Noto CJK is needed to start. Other families stay selectable and report
+# missing files in the UI, so they must not block installation on a base image.
+# DejaVu Mono is in fonts-dejavu-core on Bookworm, but a separate package on Trixie.
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.34), libstdc++6 (>= 9), libgcc-s1, libfreetype6, libpng16-16 | libpng16-16t64, zlib1g, libsdl2-2.0-0 (>= 2.0.4), fonts-noto-cjk")
+set(CPACK_DEBIAN_PACKAGE_SUGGESTS "fonts-go, fonts-inter, fonts-dejavu-core, fonts-dejavu-extra, fonts-jetbrains-mono")
 set(CPACK_DEBIAN_PACKAGE_CONFLICTS "notocjkpreview")
 set(CPACK_DEBIAN_PACKAGE_REPLACES "notocjkpreview")
 set(CPACK_DEBIAN_PACKAGE_PROVIDES "notocjkpreview")

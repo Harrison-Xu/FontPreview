@@ -1,6 +1,6 @@
 # FontPreview
 
-A 320×170 typography preview application for CardputerZero, built with C++17, LVGL 9.5, SDL2/SDL2_mixer, and FreeType.
+A 320×170 typography preview application for CardputerZero, built with C++17, LVGL 9.5, SDL2, and FreeType.
 
 The screen has a compact parameter panel on the left and a scrollable, full-height text preview on the right. Interface labels use Noto CJK; on CardputerZero all five font families are loaded from Debian system packages.
 
@@ -29,7 +29,7 @@ The screen has a compact parameter panel on the left and a scrollable, full-heig
 
 FontPreview uses four short cues from the CC0 [UI SFX](https://uisfx.com/) Arcade pack. `focus` marks Up/Down movement between parameter fields, while `select` confirms a successful Left/Right option change. `blocked` marks a size boundary or unsupported typeface or weight, and `long-press` announces entry into rapid size adjustment. Ordinary preview scrolling and every repeated size step stay silent to avoid noisy high-frequency feedback.
 
-Arcade feedback is always enabled when the audio device is available. Audio reinforces the existing visual response and is never the only status signal. The bundled audio is dedicated to the public domain under CC0-1.0; see `assets/audio/LICENSE-UISFX-AUDIO.txt`.
+Arcade feedback is always enabled when the audio device is available. The PCM WAV cues use SDL2's audio queue directly; SDL_mixer, extra codecs, and MIDI soundfonts are not needed. Audio reinforces the existing visual response and is never the only status signal. The bundled audio is dedicated to the public domain under CC0-1.0; see `assets/audio/LICENSE-UISFX-AUDIO.txt`.
 
 ## Fonts
 
@@ -40,13 +40,13 @@ On CardputerZero, the application loads the complete Regular and Bold Noto CJK f
 - `/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc`
 - `/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc`
 
-The source tree keeps matching copies under `assets/fonts/` for the macOS desktop preview only. The CardputerZero Debian package does not install or duplicate these font files.
+The repository and Debian package do not include font files. For a desktop preview, provide locally installed Noto CJK files under an external `fonts/` directory and configure with `-DAPP_ASSETS_ROOT=/path/to/local/assets`. Fonts are never copied into the CardputerZero package.
 
 The application selects the correct regional face inside each collection: JP for Japanese, KR for Korean, SC for Simplified Chinese, and TC for Traditional Chinese. Mono uses the matching regional Noto Sans Mono face already contained in the Sans TTC files, so separate Mono OTF copies are unnecessary.
 
-The fonts are licensed under the SIL Open Font License 1.1. The source asset license is recorded in `assets/fonts/LICENSE-NOTO-CJK.txt`; installed CardputerZero fonts and their copyright information are managed by Debian's `fonts-noto-cjk` package.
+The fonts are licensed under the SIL Open Font License 1.1. Installed CardputerZero fonts and their copyright information are managed by Debian's `fonts-noto-cjk` package.
 
-Go, Inter, DejaVu, and JetBrains Mono are also loaded from their standard Debian system paths. The application package depends on `fonts-noto-cjk`, `fonts-go`, `fonts-inter`, `fonts-dejavu-core`, `fonts-dejavu-extra`, `fonts-dejavu-mono`, and `fonts-jetbrains-mono`. Inter and JetBrains Mono provide native Light and Light Italic files; the other configured families do not provide a Light face. Unsupported combinations are reported directly in the preview—for example, Inter does not provide Serif or Mono faces. Noto CJK italic selections use FreeType's synthetic italic rendering because Noto CJK does not ship native italic faces.
+Go, Inter, DejaVu, and JetBrains Mono are also loaded from their standard Debian system paths. Only `fonts-noto-cjk` is a required font dependency because it supplies the interface and default preview. Go, Inter, DejaVu, and JetBrains Mono are optional: existing system files are used, and a missing face is reported in the preview without blocking installation. The package suggests `fonts-go`, `fonts-inter`, `fonts-dejavu-core`, `fonts-dejavu-extra`, and `fonts-jetbrains-mono`; it does not request their installation automatically. DejaVu Mono is included in `fonts-dejavu-core` on Debian Bookworm, and pulled in by that package on Trixie. There is no unconditional dependency on `fonts-dejavu-mono`, which is unavailable on Bookworm. Inter and JetBrains Mono provide native Light and Light Italic files; the other configured families do not provide a Light face. Unsupported combinations are reported directly in the preview—for example, Inter does not provide Serif or Mono faces. Noto CJK italic selections use FreeType's synthetic italic rendering because Noto CJK does not ship native italic faces.
 
 ## Character coverage
 
@@ -70,4 +70,50 @@ cmake --build --preset cp0-cross-rel
 cpack --preset cp0-cross-deb
 ```
 
-The package is written to `dist/FontPreview_0.4.3_m5stack1_arm64.deb` and uses the system font packages listed above without installing duplicate font files.
+The package is written to `dist/fontpreview_0.4.4-m5stack1_arm64.deb` and uses the system font packages listed above without installing duplicate font files.
+
+## Installation and publishing
+
+The package has no maintainer scripts or background services. It does not run
+font downloads, update font caches, or start the application during installation.
+Its required libraries and Noto CJK are resolved by the system package manager.
+Go, Inter, and extra font faces can be installed separately when wanted.
+
+If a store installation stalls while downloading or resolving dependencies,
+check the device's network, configured APT repositories, available storage, and
+package-manager output. From a device terminal, installing a copied package with
+`sudo apt install ./fontpreview_0.4.4-m5stack1_arm64.deb` exposes the actual error.
+Do not run a second installation while another package-manager process is active.
+The application itself should be launched as the normal user.
+
+The store metadata follows the [CardputerZero application development specification](https://cardputer.cc/#/documents/cp0-dev).
+The existing share code `FONT` is retained. To submit the rebuilt package, run
+this command from the project root:
+
+```shell
+~/M5Stack_Repos/AppBuilder/czdev publish --deb ./dist/fontpreview_0.4.4-m5stack1_arm64.deb
+```
+
+## 0.4.4 changes
+
+- Complete store metadata with the current category, seven permissions, author, and existing share code.
+- Keep system fonts and make nonessential font packages optional to reduce installation dependencies.
+- Play the same four WAV cues through SDL2 without SDL_mixer or its codec/soundfont dependencies.
+- Release preview fonts after switching faces or sizes; keep the interface fonts and active preview in memory.
+- Use the standard lowercase Debian filename and document the external fonts needed for a desktop preview.
+
+## Regression checks
+
+On a desktop build, enable the audio and font lifetime checks with a locally
+installed test font (any supported TTF/OTF file; it is not packaged):
+
+```shell
+cmake --preset darwin-arm64 -DFONTPREVIEW_BUILD_TESTS=ON -DFONTPREVIEW_TEST_FONT=/path/to/local/font.ttf
+cmake --build --preset darwin-arm64-dbg
+ctest --test-dir build/darwin-arm64 -C Debug --output-on-failure
+```
+
+The checks use SDL's dummy audio device and cover repeated playback, malformed
+WAV files, unsupported PCM formats, unavailable audio, repeated font switches,
+and CJK regional face selection. If no test font is supplied, the font lifetime
+check is skipped.
