@@ -549,8 +549,9 @@ target_link_libraries(${PROJECT_NAME}
 # Package deb
 include(cmake/cm0-package.cmake)
 
-option(FONTPREVIEW_BUILD_TESTS "Build desktop audio and font regression checks" OFF)
+option(FONTPREVIEW_BUILD_TESTS "Build desktop audio, font, and keyboard regression checks" OFF)
 set(FONTPREVIEW_TEST_FONT "" CACHE FILEPATH "Locally installed font for cache regression checks")
+set(FONTPREVIEW_TEST_UI_ASSETS "" CACHE PATH "External assets with existing Noto CJK fonts for keyboard checks")
 if(USE_DESKTOP AND FONTPREVIEW_BUILD_TESTS)
     enable_testing()
     add_executable(fontpreview_regression tests/runtime_regression.cpp)
@@ -559,4 +560,12 @@ if(USE_DESKTOP AND FONTPREVIEW_BUILD_TESTS)
         "${CMAKE_CURRENT_SOURCE_DIR}/assets" "${FONTPREVIEW_TEST_FONT}")
     set_tests_properties(runtime_regression PROPERTIES
         ENVIRONMENT "SDL_AUDIODRIVER=dummy" TIMEOUT 30)
+    add_executable(fontpreview_keyboard_regression tests/keyboard_regression.cpp)
+    target_link_libraries(fontpreview_keyboard_regression PRIVATE ${PROJECT_NAME}_core)
+    if(FONTPREVIEW_TEST_UI_ASSETS)
+        add_test(NAME keyboard_regression COMMAND fontpreview_keyboard_regression
+            "${FONTPREVIEW_TEST_UI_ASSETS}")
+        set_tests_properties(keyboard_regression PROPERTIES
+            ENVIRONMENT "SDL_AUDIODRIVER=dummy;SDL_VIDEODRIVER=dummy" TIMEOUT 30)
+    endif()
 endif()

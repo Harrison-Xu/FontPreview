@@ -5,6 +5,7 @@
  */
 
 #include "app.h"
+#include "keyboard_shortcuts.h"
 
 #include "logger.h"
 #include "linux_input.h"
@@ -112,8 +113,7 @@ lv_display_t* init_display() {
     lv_sdl_window_set_resizeable(display, false);
     lv_sdl_mouse_create();
     lv_sdl_mousewheel_create();
-    auto* keyboard = lv_sdl_keyboard_create();
-    platform::attach_key_router(keyboard);
+    platform::init_key_input(display);
     return display;
 #elif APP_USE_DRM
     auto* display = lv_linux_drm_create();
@@ -170,10 +170,14 @@ int Application::run() {
     screen_ = std::make_unique<view::PreviewScreen>(model_, assets_, sound_player_);
     if (!screen_->build()) {
         LOG_ERROR("failed to build preview screen");
+        platform::deinit_key_input(display);
+        screen_.reset();
+        lv_display_delete(display);
         return 1;
     }
 
     int result = 0;
+    shortcuts_ = std::make_unique<KeyboardShortcuts>(*screen_, [this] { running_ = false; });
     platform::set_key_event_handler(key_event, this);
     lv_screen_load(screen_->root());
 
@@ -201,8 +205,10 @@ int Application::run() {
     }
 
     platform::set_key_event_handler(nullptr, nullptr);
-    lv_display_delete(display);
+    shortcuts_.reset();
+    platform::deinit_key_input(display);
     screen_.reset();
+    lv_display_delete(display);
     return result;
 }
 
@@ -212,10 +218,7 @@ void Application::key_event(uint32_t key, bool pressed, void* user_data) {
 }
 
 void Application::handle_key(uint32_t key, bool pressed) {
-    if (key == LV_KEY_ESC && pressed) {
-        running_ = false;
-        return;
-    }
+    if (shortcuts_ && shortcuts_->handle_key(key, pressed)) return;
     if (screen_) screen_->handle_key(key, pressed);
 }
 

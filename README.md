@@ -23,7 +23,15 @@ The screen has a compact parameter panel on the left and a scrollable, full-heig
 | `C` | Right arrow or `C` | Next value |
 | `L` | `L` | Scroll preview up |
 | `M` | `M` | Scroll preview down |
-| Esc | Esc | Exit |
+| `fn+H` | `H` or F1 | Open / close keyboard help |
+| Short Esc | Short Esc | Show "Hold ESC to exit" |
+| Hold Esc (700 ms) | Hold Esc (700 ms) | Exit |
+
+The help popup lists `F / X: Switch fields`, `Z / C: Change options`, and
+`L / M: Scroll page content`. While help is open, Esc closes it and preview
+controls are paused. The popup layout and ESC hint follow
+[CardputerZero/Template](https://github.com/CardputerZero/Template/tree/477fa6d217b683e3084c361a757f03dc8ca9f753).
+As in Template, the highlighted hint appears on ESC press and hides on release.
 
 ## Interface sounds
 
@@ -126,3 +134,8 @@ The checks use SDL's dummy audio device and cover repeated playback, malformed
 WAV files, unsupported PCM formats, unavailable audio, repeated font switches,
 and CJK regional face selection. If no test font is supplied, the font lifetime
 check is skipped.
+
+Set `FONTPREVIEW_TEST_UI_ASSETS` to an external asset directory containing the
+existing Noto CJK interface faces to also run the keyboard regression checks.
+These cover ESC press/release and hold timing, help toggling and input blocking,
+size repeat cancellation, and desktop focus loss. Test fonts are not packaged.

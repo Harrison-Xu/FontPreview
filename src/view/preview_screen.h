@@ -33,6 +33,10 @@ public:
     bool build();
     void handle_key(uint32_t key, bool pressed);
     lv_obj_t* root() const;
+    void set_help_visible(bool visible);
+    bool help_visible() const;
+    void show_exit_hint();
+    void hide_exit_hint();
 
 private:
     struct FieldRow {
@@ -51,6 +55,10 @@ private:
     void stop_size_repeat();
     static void size_repeat_cb(lv_timer_t* timer);
     bool load_ui_fonts();
+    void build_shortcuts();
+    void apply_shortcut_colors();
+    void release_unused_fonts(lv_font_t* preview_font = nullptr);
+    static void help_backdrop_cb(lv_event_t* event);
     FieldRow create_field_row(std::size_t index, const char* caption);
 
     model::PreviewModel& model_;
@@ -65,6 +73,15 @@ private:
     lv_font_t* ui_small_{nullptr};
     lv_font_t* ui_bold_{nullptr};
     lv_font_t* ui_message_{nullptr};
+    std::array<lv_font_t*, 5> shortcut_fonts_{};
+    lv_obj_t* help_{nullptr};
+    lv_obj_t* help_panel_{nullptr};
+    lv_obj_t* help_title_{nullptr};
+    lv_obj_t* help_badge_{nullptr};
+    lv_obj_t* help_footer_{nullptr};
+    std::array<FieldRow, 3> help_rows_{};
+    lv_obj_t* exit_hint_{nullptr};
+    lv_obj_t* exit_hint_label_{nullptr};
     lv_timer_t* size_repeat_timer_{nullptr};
     uint32_t repeating_key_{0};
     bool size_repeat_has_fired_{false};

@@ -19,6 +19,8 @@ class PreviewScreen;
 
 namespace app {
 
+class KeyboardShortcuts;
+
 class Application {
 public:
     Application();
@@ -33,6 +35,7 @@ private:
     SoundPlayer sound_player_{assets_};
     model::PreviewModel model_;
     std::unique_ptr<view::PreviewScreen> screen_;
+    std::unique_ptr<KeyboardShortcuts> shortcuts_;
     bool running_{true};
 };
 

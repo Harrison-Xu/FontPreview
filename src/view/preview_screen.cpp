@@ -104,11 +104,13 @@ bool PreviewScreen::build() {
     lv_obj_set_style_text_align(sample_, LV_TEXT_ALIGN_LEFT, 0);
     lv_obj_set_style_text_line_space(sample_, 4, 0);
 
+    build_shortcuts();
     refresh();
     return true;
 }
 
 void PreviewScreen::handle_key(uint32_t key, bool pressed) {
+    if (help_visible()) return;
     if (!pressed) {
         if (key == repeating_key_) stop_size_repeat();
         return;
@@ -167,7 +169,7 @@ void PreviewScreen::refresh() {
         lv_label_set_text_fmt(sample_, "%s has no %s %s face.", model_.font_name(), model_.weight_name(),
                               model_.typeface_name());
         position_sample();
-        assets_.release_unused_fonts({ui_small_, ui_regular_, ui_bold_, ui_message_});
+        release_unused_fonts();
         return;
     }
 
@@ -178,14 +180,14 @@ void PreviewScreen::refresh() {
         lv_obj_set_style_text_font(sample_, ui_message_, 0);
         lv_label_set_text(sample_, "This font face is not available on this system.");
         position_sample();
-        assets_.release_unused_fonts({ui_small_, ui_regular_, ui_bold_, ui_message_});
+        release_unused_fonts();
         return;
     }
 
     lv_obj_set_style_text_font(sample_, preview_font, 0);
     lv_label_set_text(sample_, model_.sample_text());
     position_sample();
-    assets_.release_unused_fonts({ui_small_, ui_regular_, ui_bold_, ui_message_, preview_font});
+    release_unused_fonts(preview_font);
 }
 
 void PreviewScreen::apply_colors() {
@@ -211,6 +213,13 @@ void PreviewScreen::apply_colors() {
         lv_obj_set_style_text_color(rows_[i].caption, is_selected ? background : muted, 0);
         lv_obj_set_style_text_color(rows_[i].value, is_selected ? background : foreground, 0);
     }
+    apply_shortcut_colors();
+}
+
+void PreviewScreen::release_unused_fonts(lv_font_t* preview_font) {
+    assets_.release_unused_fonts({ui_small_, ui_regular_, ui_bold_, ui_message_, preview_font,
+                                  shortcut_fonts_[0], shortcut_fonts_[1], shortcut_fonts_[2],
+                                  shortcut_fonts_[3], shortcut_fonts_[4]});
 }
 
 void PreviewScreen::refresh_values() {
