@@ -80,7 +80,7 @@ cmake --build --preset cp0-cross-rel
 cpack --preset cp0-cross-deb
 ```
 
-The package is written to `dist/fontpreview_0.4.5-1_arm64.deb` and only reads fonts already on the device.
+The package is written to `dist/fontpreview_0.4.6-1_arm64.deb` and only reads fonts already on the device.
 
 ## Installation and publishing
 
@@ -92,7 +92,7 @@ are required or suggested; the system's existing fonts are left untouched.
 If a store installation stalls while downloading or resolving dependencies,
 check the device's network, configured APT repositories, available storage, and
 package-manager output. From a device terminal, installing a copied package with
-`sudo apt install ./fontpreview_0.4.5-1_arm64.deb` exposes the actual error.
+`sudo apt install ./fontpreview_0.4.6-1_arm64.deb` exposes the actual error.
 Do not run a second installation while another package-manager process is active.
 The application itself should be launched as the normal user.
 
@@ -101,8 +101,16 @@ The existing share code `FONT` is retained. To submit the rebuilt package, run
 this command from the project root:
 
 ```shell
-~/M5Stack_Repos/AppBuilder/czdev publish --deb ./dist/fontpreview_0.4.5-1_arm64.deb
+~/M5Stack_Repos/AppBuilder/czdev publish --deb ./dist/fontpreview_0.4.6-1_arm64.deb
 ```
+
+## 0.4.6 changes
+
+- Add `fn+H` keyboard help with English field, option, and scrolling controls.
+- Match Template's highlighted "Hold ESC to exit" hint and 700 ms hold to exit.
+- Close help with `fn+H` or Esc and pause preview controls while it is open.
+- Use `FontPreview` casing in the help badge.
+- Preserve real desktop key releases for ESC holds and size repeat.
 
 ## 0.4.5 changes
 

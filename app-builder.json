@@ -1,6 +1,6 @@
 {
   "package_name": "fontpreview",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "app_name": "FontPreview",
   "bin_name": "fontpreview",
   "description": "Preview existing system fonts on CardputerZero without installing additional fonts.",
