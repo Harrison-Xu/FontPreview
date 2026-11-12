@@ -1,6 +1,6 @@
 {
   "package_name": "fontpreview",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "app_name": "FontPreview",
   "bin_name": "fontpreview",
   "description": "Preview existing system fonts on CardputerZero without installing additional fonts.",
@@ -38,7 +38,7 @@
     "license": "MIT",
     "source_repo": "https://github.com/Harrison-Xu/FontPreview",
     "author": {
-      "display_name": "XuHaifeng",
+      "display_name": "HarrisonXu",
       "github": "Harrison-Xu"
     },
     "share_code": "FONT",

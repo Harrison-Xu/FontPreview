@@ -30,8 +30,6 @@
 namespace app {
 namespace {
 
-constexpr const char* kSystemNotoFontDirectory = "/usr/share/fonts/opentype/noto";
-
 bool path_exists(const std::filesystem::path& path) {
     std::error_code ec;
     return std::filesystem::exists(path, ec);
@@ -53,7 +51,9 @@ struct AssetManager::LoadedFont {
     lv_font_t* font;
 };
 
-AssetManager::AssetManager(std::string app_name, std::filesystem::path cmake_assets_root) {
+AssetManager::AssetManager(std::string app_name, std::filesystem::path cmake_assets_root,
+                          std::vector<std::filesystem::path> system_font_directories)
+    : system_font_directories_(std::move(system_font_directories)) {
     add_root_if_valid(std::move(cmake_assets_root));
     add_root_if_valid(default_cmake_assets_root());
     add_root_if_valid(APP_SOURCE_ASSETS_ROOT);
@@ -79,6 +79,18 @@ std::filesystem::path AssetManager::default_cmake_assets_root() {
     return APP_CMAKE_ASSETS_ROOT;
 }
 
+std::vector<std::filesystem::path> AssetManager::default_system_font_directories() {
+    return {
+        "/usr/share/fonts/opentype/noto",
+        "/usr/share/fonts/fonts-go",
+        "/usr/share/fonts/opentype/inter",
+        "/usr/share/fonts/truetype/dejavu",
+        "/usr/share/fonts/truetype/jetbrains-mono",
+        "/usr/share/APPLaunch/share/font",
+        "/usr/share/factory_test/fonts",
+    };
+}
+
 const std::vector<std::filesystem::path>& AssetManager::roots() const {
     return roots_;
 }
@@ -99,20 +111,39 @@ std::filesystem::path AssetManager::resolve(const std::filesystem::path& relativ
 }
 
 std::filesystem::path AssetManager::resolve_font(const std::filesystem::path& file_name) const {
-    if (file_name.is_absolute()) {
+    if (file_name.empty()) return {};
+    std::error_code ec;
+    if (file_name.is_absolute() && std::filesystem::is_regular_file(file_name, ec)) {
         return resolve(file_name);
     }
 
+    const auto basename = file_name.filename();
 #if USE_DESKTOP
-    auto desktop_font = resolve(std::filesystem::path{"fonts"} / file_name);
-    if (!desktop_font.empty()) {
+    auto desktop_font = resolve(std::filesystem::path{"fonts"} / basename);
+    if (!desktop_font.empty() && std::filesystem::is_regular_file(desktop_font, ec)) {
         return desktop_font;
     }
 #endif
 
-    auto system_font = std::filesystem::path{kSystemNotoFontDirectory} / file_name;
-    if (path_exists(system_font)) {
-        return weakly_canonical_path(system_font);
+    // Preserve the requested family, weight and style when trying image paths.
+    // Factory Test supplies static Inter TTFs with lowercase filenames.
+    std::filesystem::path factory_name;
+    if (basename == "Inter-Regular.otf") factory_name = "inter-regular.ttf";
+    else if (basename == "Inter-Bold.otf") factory_name = "inter-bold.ttf";
+
+    for (const auto& directory : system_font_directories_) {
+        const auto candidate = directory / basename;
+        if (std::filesystem::is_regular_file(candidate, ec)) {
+            return weakly_canonical_path(candidate);
+        }
+    }
+    if (!factory_name.empty()) {
+        for (const auto& directory : system_font_directories_) {
+            const auto candidate = directory / factory_name;
+            if (std::filesystem::is_regular_file(candidate, ec)) {
+                return weakly_canonical_path(candidate);
+            }
+        }
     }
 
     return {};

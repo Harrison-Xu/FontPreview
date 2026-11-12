@@ -1,0 +1,44 @@
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.7
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+Linux CardputerZero 6.18.39+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.18.39-1+rpt1 (2026-07-29) aarch64 GNU/Linux
+fonts-arphic-ukai	unknown ok not-installed	
+fonts-arphic-uming	unknown ok not-installed	
+fonts-cantarell	install ok installed	0.303.1-4
+fonts-croscore	unknown ok not-installed	
+fonts-dejavu	unknown ok not-installed	
+fonts-dejavu-core	install ok installed	2.37-8
+fonts-dejavu-extra	install ok installed	2.37-8
+fonts-dejavu-mono	install ok installed	2.37-8
+fonts-droid	unknown ok not-installed	
+fonts-droid-fallback	install ok installed	1:8.1.0r7-1~1.gbp36536b
+fonts-freefont-otf	unknown ok not-installed	
+fonts-freefont-ttf	install ok installed	20211204+svn4273-2
+fonts-gfs-didot-classic	install ok installed	1.1-6
+fonts-ipafont-gothic	unknown ok not-installed	
+fonts-ipafont-mincho	unknown ok not-installed	
+fonts-japanese-gothic	unknown ok not-installed	
+fonts-japanese-mincho	unknown ok not-installed	
+fonts-liberation	install ok installed	1:2.1.5-3
+fonts-liberation-sans-narrow	install ok installed	1:1.07.6-4
+fonts-liberation2	install ok installed	1:2.1.5-3
+fonts-linuxlibertine	unknown ok not-installed	
+fonts-lmodern	unknown ok not-installed	
+fonts-nanum	unknown ok not-installed	
+fonts-noto	unknown ok not-installed	
+fonts-noto-cjk	install ok installed	1:20240730+repack1-1
+fonts-noto-cjk-extra	install ok installed	1:20240730+repack1-1
+fonts-noto-core	unknown ok not-installed	
+fonts-noto-mono	install ok installed	20201225-2
+fonts-noto-unhinted	unknown ok not-installed	
+fonts-nunito-sans	install ok installed	1.0
+fonts-stix	unknown ok not-installed	
+fonts-texgyre	unknown ok not-installed	
+fonts-urw-base35	install ok installed	20200910-8

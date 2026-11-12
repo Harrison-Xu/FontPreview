@@ -1,0 +1,311 @@
+path	index	family	style
+/usr/lib/firefox/fonts/TwemojiMozilla.ttf	0	Twemoji Mozilla	Regular
+/usr/lib/python3/dist-packages/reportlab/fonts/DarkGardenMK.pfb	0	Dark Garden	Regular
+/usr/lib/python3/dist-packages/reportlab/fonts/Vera.ttf	0	Bitstream Vera Sans	Roman
+/usr/lib/python3/dist-packages/reportlab/fonts/VeraBI.ttf	0	Bitstream Vera Sans	Bold Oblique
+/usr/lib/python3/dist-packages/reportlab/fonts/VeraBd.ttf	0	Bitstream Vera Sans	Bold
+/usr/lib/python3/dist-packages/reportlab/fonts/VeraIt.ttf	0	Bitstream Vera Sans	Oblique
+/usr/lib/python3/dist-packages/reportlab/fonts/callig15.pfb	0	CALLIG15	Regular
+/usr/share/APPLaunch/share/font/AlibabaPuHuiTi-3-35-Thin.ttf	0	Alibaba PuHuiTi 3.0	35 Thin
+/usr/share/APPLaunch/share/font/AlibabaPuHuiTi-3-55-Regular.ttf	0	Alibaba PuHuiTi 3.0	55 Regular
+/usr/share/APPLaunch/share/font/DejaVuSans.ttf	0	DejaVu Sans	Book
+/usr/share/APPLaunch/share/font/DejaVuSansMono.ttf	0	DejaVu Sans Mono	Book
+/usr/share/APPLaunch/share/font/DejaVuSerif.ttf	0	DejaVu Serif	Book
+/usr/share/APPLaunch/share/font/JetBrainsMono-Bold.ttf	0	JetBrains Mono	Bold
+/usr/share/APPLaunch/share/font/JetBrainsMono-Regular.ttf	0	JetBrains Mono	Regular
+/usr/share/APPLaunch/share/font/LiberationMono-Regular.ttf	0	Liberation Mono	Regular
+/usr/share/APPLaunch/share/font/Montserrat-Bold.ttf	0	Montserrat	Bold
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	0	Noto Sans CJK JP	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	1	Noto Sans CJK KR	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	2	Noto Sans CJK SC	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	3	Noto Sans CJK TC	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	4	Noto Sans CJK HK	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	5	Noto Sans Mono CJK JP	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	6	Noto Sans Mono CJK KR	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	7	Noto Sans Mono CJK SC	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	8	Noto Sans Mono CJK TC	Regular
+/usr/share/APPLaunch/share/font/NotoSansCJK-Regular.ttc	9	Noto Sans Mono CJK HK	Regular
+/usr/share/APPLaunch/share/font/NotoSerifCJK-Regular.ttc	0	Noto Serif CJK JP	Regular
+/usr/share/APPLaunch/share/font/NotoSerifCJK-Regular.ttc	1	Noto Serif CJK KR	Regular
+/usr/share/APPLaunch/share/font/NotoSerifCJK-Regular.ttc	2	Noto Serif CJK SC	Regular
+/usr/share/APPLaunch/share/font/NotoSerifCJK-Regular.ttc	3	Noto Serif CJK TC	Regular
+/usr/share/APPLaunch/share/font/NotoSerifCJK-Regular.ttc	4	Noto Serif CJK HK	Regular
+/usr/share/APPLaunch/share/font/svgfont.ttf	0	svgfont	Regular
+/usr/share/CameraApp/assets/fonts/camera_icons.ttf	0	camera-icons	Regular
+/usr/share/CameraApp/assets/fonts/kenney_input_keyboard_and_mouse.ttf	0	Kenney Input Keyboard & Mouse	Regular
+/usr/share/camera_app/fonts/camera_icons.ttf	0	camera-icons	Regular
+/usr/share/camera_app/fonts/kenney_input_keyboard_and_mouse.ttf	0	Kenney Input Keyboard & Mouse	Regular
+/usr/share/factory_test/fonts/Phosphor-Fill.ttf	0	Phosphor-Fill	Regular
+/usr/share/factory_test/fonts/alibaba-puhui-regular.ttf	0	Alibaba PuHuiTi 3.0	55 Regular
+/usr/share/factory_test/fonts/camera_icons.ttf	0	camera-icons	Regular
+/usr/share/factory_test/fonts/inter-bold.ttf	0	Inter 18pt	Bold
+/usr/share/factory_test/fonts/inter-medium.ttf	0	Inter 18pt	Medium
+/usr/share/factory_test/fonts/inter-regular.ttf	0	Inter 18pt	Regular
+/usr/share/factory_test/fonts/inter-semibold.ttf	0	Inter 18pt	SemiBold
+/usr/share/factory_test/fonts/kenney_input_keyboard_and_mouse.ttf	0	Kenney Input Keyboard & Mouse	Regular
+/usr/share/factory_test/fonts/kenny_keyboard_extra.ttf	0	kenny_extra	Regular
+/usr/share/fonts-droid-fallback/truetype/DroidSansFallback.ttf	0	Droid Sans Fallback	Regular
+/usr/share/fonts/X11/Type1/C059-BdIta.pfb	0	C059	Bold Italic
+/usr/share/fonts/X11/Type1/C059-Bold.pfb	0	C059	Bold
+/usr/share/fonts/X11/Type1/C059-Italic.pfb	0	C059	Italic
+/usr/share/fonts/X11/Type1/C059-Roman.pfb	0	C059	Roman
+/usr/share/fonts/X11/Type1/D050000L.pfb	0	D050000L	Regular
+/usr/share/fonts/X11/Type1/NimbusMonoPS-Bold.pfb	0	Nimbus Mono PS	Bold
+/usr/share/fonts/X11/Type1/NimbusMonoPS-BoldItalic.pfb	0	Nimbus Mono PS	Bold Italic
+/usr/share/fonts/X11/Type1/NimbusMonoPS-Italic.pfb	0	Nimbus Mono PS	Italic
+/usr/share/fonts/X11/Type1/NimbusMonoPS-Regular.pfb	0	Nimbus Mono PS	Regular
+/usr/share/fonts/X11/Type1/NimbusRoman-Bold.pfb	0	Nimbus Roman	Bold
+/usr/share/fonts/X11/Type1/NimbusRoman-BoldItalic.pfb	0	Nimbus Roman	Bold Italic
+/usr/share/fonts/X11/Type1/NimbusRoman-Italic.pfb	0	Nimbus Roman	Italic
+/usr/share/fonts/X11/Type1/NimbusRoman-Regular.pfb	0	Nimbus Roman	Regular
+/usr/share/fonts/X11/Type1/NimbusSans-Bold.pfb	0	Nimbus Sans	Bold
+/usr/share/fonts/X11/Type1/NimbusSans-BoldItalic.pfb	0	Nimbus Sans	Bold Italic
+/usr/share/fonts/X11/Type1/NimbusSans-Italic.pfb	0	Nimbus Sans	Italic
+/usr/share/fonts/X11/Type1/NimbusSans-Regular.pfb	0	Nimbus Sans	Regular
+/usr/share/fonts/X11/Type1/NimbusSansNarrow-Bold.pfb	0	Nimbus Sans Narrow	Bold
+/usr/share/fonts/X11/Type1/NimbusSansNarrow-BoldOblique.pfb	0	Nimbus Sans Narrow	Bold Oblique
+/usr/share/fonts/X11/Type1/NimbusSansNarrow-Oblique.pfb	0	Nimbus Sans Narrow	Oblique
+/usr/share/fonts/X11/Type1/NimbusSansNarrow-Regular.pfb	0	Nimbus Sans Narrow	Regular
+/usr/share/fonts/X11/Type1/P052-Bold.pfb	0	P052	Bold
+/usr/share/fonts/X11/Type1/P052-BoldItalic.pfb	0	P052	Bold Italic
+/usr/share/fonts/X11/Type1/P052-Italic.pfb	0	P052	Italic
+/usr/share/fonts/X11/Type1/P052-Roman.pfb	0	P052	Roman
+/usr/share/fonts/X11/Type1/StandardSymbolsPS.pfb	0	Standard Symbols PS	Regular
+/usr/share/fonts/X11/Type1/URWBookman-Demi.pfb	0	URW Bookman	Demi
+/usr/share/fonts/X11/Type1/URWBookman-DemiItalic.pfb	0	URW Bookman	Demi Italic
+/usr/share/fonts/X11/Type1/URWBookman-Light.pfb	0	URW Bookman	Light
+/usr/share/fonts/X11/Type1/URWBookman-LightItalic.pfb	0	URW Bookman	Light Italic
+/usr/share/fonts/X11/Type1/URWGothic-Book.pfb	0	URW Gothic	Book
+/usr/share/fonts/X11/Type1/URWGothic-BookOblique.pfb	0	URW Gothic	Book Oblique
+/usr/share/fonts/X11/Type1/URWGothic-Demi.pfb	0	URW Gothic	Demi
+/usr/share/fonts/X11/Type1/URWGothic-DemiOblique.pfb	0	URW Gothic	Demi Oblique
+/usr/share/fonts/X11/Type1/Z003-MediumItalic.pfb	0	Z003	Medium Italic
+/usr/share/fonts/opentype/cantarell/Cantarell-VF.otf	0	Cantarell	
+/usr/share/fonts/opentype/cantarell/Cantarell-VF.otf	0	Cantarell	Regular
+/usr/share/fonts/opentype/cantarell/Cantarell-VF.otf	131072	Cantarell	Light
+/usr/share/fonts/opentype/cantarell/Cantarell-VF.otf	262144	Cantarell	Bold
+/usr/share/fonts/opentype/cantarell/Cantarell-VF.otf	327680	Cantarell	Extra Bold
+/usr/share/fonts/opentype/cantarell/Cantarell-VF.otf	65536	Cantarell	Thin
+/usr/share/fonts/opentype/didot-classic/GFSDidotClassic.otf	0	GFS Didot Classic	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc	0	Noto Sans CJK JP	Black
+/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc	1	Noto Sans CJK KR	Black
+/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc	2	Noto Sans CJK SC	Black
+/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc	3	Noto Sans CJK TC	Black
+/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc	4	Noto Sans CJK HK	Black
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	0	Noto Sans CJK JP	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	1	Noto Sans CJK KR	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	2	Noto Sans CJK SC	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	3	Noto Sans CJK TC	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	4	Noto Sans CJK HK	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	5	Noto Sans Mono CJK JP	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	6	Noto Sans Mono CJK KR	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	7	Noto Sans Mono CJK SC	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	8	Noto Sans Mono CJK TC	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc	9	Noto Sans Mono CJK HK	Bold
+/usr/share/fonts/opentype/noto/NotoSansCJK-DemiLight.ttc	0	Noto Sans CJK JP	DemiLight
+/usr/share/fonts/opentype/noto/NotoSansCJK-DemiLight.ttc	1	Noto Sans CJK KR	DemiLight
+/usr/share/fonts/opentype/noto/NotoSansCJK-DemiLight.ttc	2	Noto Sans CJK SC	DemiLight
+/usr/share/fonts/opentype/noto/NotoSansCJK-DemiLight.ttc	3	Noto Sans CJK TC	DemiLight
+/usr/share/fonts/opentype/noto/NotoSansCJK-DemiLight.ttc	4	Noto Sans CJK HK	DemiLight
+/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc	0	Noto Sans CJK JP	Light
+/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc	1	Noto Sans CJK KR	Light
+/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc	2	Noto Sans CJK SC	Light
+/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc	3	Noto Sans CJK TC	Light
+/usr/share/fonts/opentype/noto/NotoSansCJK-Light.ttc	4	Noto Sans CJK HK	Light
+/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc	0	Noto Sans CJK JP	Medium
+/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc	1	Noto Sans CJK KR	Medium
+/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc	2	Noto Sans CJK SC	Medium
+/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc	3	Noto Sans CJK TC	Medium
+/usr/share/fonts/opentype/noto/NotoSansCJK-Medium.ttc	4	Noto Sans CJK HK	Medium
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	0	Noto Sans CJK JP	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	1	Noto Sans CJK KR	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	2	Noto Sans CJK SC	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	3	Noto Sans CJK TC	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	4	Noto Sans CJK HK	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	5	Noto Sans Mono CJK JP	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	6	Noto Sans Mono CJK KR	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	7	Noto Sans Mono CJK SC	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	8	Noto Sans Mono CJK TC	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc	9	Noto Sans Mono CJK HK	Regular
+/usr/share/fonts/opentype/noto/NotoSansCJK-Thin.ttc	0	Noto Sans CJK JP	Thin
+/usr/share/fonts/opentype/noto/NotoSansCJK-Thin.ttc	1	Noto Sans CJK KR	Thin
+/usr/share/fonts/opentype/noto/NotoSansCJK-Thin.ttc	2	Noto Sans CJK SC	Thin
+/usr/share/fonts/opentype/noto/NotoSansCJK-Thin.ttc	3	Noto Sans CJK TC	Thin
+/usr/share/fonts/opentype/noto/NotoSansCJK-Thin.ttc	4	Noto Sans CJK HK	Thin
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Black.ttc	0	Noto Serif CJK JP	Black
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Black.ttc	1	Noto Serif CJK KR	Black
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Black.ttc	2	Noto Serif CJK SC	Black
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Black.ttc	3	Noto Serif CJK TC	Black
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Black.ttc	4	Noto Serif CJK HK	Black
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc	0	Noto Serif CJK JP	Bold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc	1	Noto Serif CJK KR	Bold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc	2	Noto Serif CJK SC	Bold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc	3	Noto Serif CJK TC	Bold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc	4	Noto Serif CJK HK	Bold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc	0	Noto Serif CJK JP	ExtraLight
+/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc	1	Noto Serif CJK KR	ExtraLight
+/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc	2	Noto Serif CJK SC	ExtraLight
+/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc	3	Noto Serif CJK TC	ExtraLight
+/usr/share/fonts/opentype/noto/NotoSerifCJK-ExtraLight.ttc	4	Noto Serif CJK HK	ExtraLight
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Light.ttc	0	Noto Serif CJK JP	Light
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Light.ttc	1	Noto Serif CJK KR	Light
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Light.ttc	2	Noto Serif CJK SC	Light
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Light.ttc	3	Noto Serif CJK TC	Light
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Light.ttc	4	Noto Serif CJK HK	Light
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Medium.ttc	0	Noto Serif CJK JP	Medium
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Medium.ttc	1	Noto Serif CJK KR	Medium
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Medium.ttc	2	Noto Serif CJK SC	Medium
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Medium.ttc	3	Noto Serif CJK TC	Medium
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Medium.ttc	4	Noto Serif CJK HK	Medium
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc	0	Noto Serif CJK JP	Regular
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc	1	Noto Serif CJK KR	Regular
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc	2	Noto Serif CJK SC	Regular
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc	3	Noto Serif CJK TC	Regular
+/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc	4	Noto Serif CJK HK	Regular
+/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc	0	Noto Serif CJK JP	SemiBold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc	1	Noto Serif CJK KR	SemiBold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc	2	Noto Serif CJK SC	SemiBold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc	3	Noto Serif CJK TC	SemiBold
+/usr/share/fonts/opentype/noto/NotoSerifCJK-SemiBold.ttc	4	Noto Serif CJK HK	SemiBold
+/usr/share/fonts/opentype/urw-base35/C059-BdIta.otf	0	C059	Bold Italic
+/usr/share/fonts/opentype/urw-base35/C059-Bold.otf	0	C059	Bold
+/usr/share/fonts/opentype/urw-base35/C059-Italic.otf	0	C059	Italic
+/usr/share/fonts/opentype/urw-base35/C059-Roman.otf	0	C059	Roman
+/usr/share/fonts/opentype/urw-base35/D050000L.otf	0	D050000L	Regular
+/usr/share/fonts/opentype/urw-base35/NimbusMonoPS-Bold.otf	0	Nimbus Mono PS	Bold
+/usr/share/fonts/opentype/urw-base35/NimbusMonoPS-BoldItalic.otf	0	Nimbus Mono PS	Bold Italic
+/usr/share/fonts/opentype/urw-base35/NimbusMonoPS-Italic.otf	0	Nimbus Mono PS	Italic
+/usr/share/fonts/opentype/urw-base35/NimbusMonoPS-Regular.otf	0	Nimbus Mono PS	Regular
+/usr/share/fonts/opentype/urw-base35/NimbusRoman-Bold.otf	0	Nimbus Roman	Bold
+/usr/share/fonts/opentype/urw-base35/NimbusRoman-BoldItalic.otf	0	Nimbus Roman	Bold Italic
+/usr/share/fonts/opentype/urw-base35/NimbusRoman-Italic.otf	0	Nimbus Roman	Italic
+/usr/share/fonts/opentype/urw-base35/NimbusRoman-Regular.otf	0	Nimbus Roman	Regular
+/usr/share/fonts/opentype/urw-base35/NimbusSans-Bold.otf	0	Nimbus Sans	Bold
+/usr/share/fonts/opentype/urw-base35/NimbusSans-BoldItalic.otf	0	Nimbus Sans	Bold Italic
+/usr/share/fonts/opentype/urw-base35/NimbusSans-Italic.otf	0	Nimbus Sans	Italic
+/usr/share/fonts/opentype/urw-base35/NimbusSans-Regular.otf	0	Nimbus Sans	Regular
+/usr/share/fonts/opentype/urw-base35/NimbusSansNarrow-Bold.otf	0	Nimbus Sans Narrow	Bold
+/usr/share/fonts/opentype/urw-base35/NimbusSansNarrow-BoldOblique.otf	0	Nimbus Sans Narrow	Bold Oblique
+/usr/share/fonts/opentype/urw-base35/NimbusSansNarrow-Oblique.otf	0	Nimbus Sans Narrow	Oblique
+/usr/share/fonts/opentype/urw-base35/NimbusSansNarrow-Regular.otf	0	Nimbus Sans Narrow	Regular
+/usr/share/fonts/opentype/urw-base35/P052-Bold.otf	0	P052	Bold
+/usr/share/fonts/opentype/urw-base35/P052-BoldItalic.otf	0	P052	Bold Italic
+/usr/share/fonts/opentype/urw-base35/P052-Italic.otf	0	P052	Italic
+/usr/share/fonts/opentype/urw-base35/P052-Roman.otf	0	P052	Roman
+/usr/share/fonts/opentype/urw-base35/StandardSymbolsPS.otf	0	Standard Symbols PS	Regular
+/usr/share/fonts/opentype/urw-base35/URWBookman-Demi.otf	0	URW Bookman	Demi
+/usr/share/fonts/opentype/urw-base35/URWBookman-DemiItalic.otf	0	URW Bookman	Demi Italic
+/usr/share/fonts/opentype/urw-base35/URWBookman-Light.otf	0	URW Bookman	Light
+/usr/share/fonts/opentype/urw-base35/URWBookman-LightItalic.otf	0	URW Bookman	Light Italic
+/usr/share/fonts/opentype/urw-base35/URWGothic-Book.otf	0	URW Gothic	Book
+/usr/share/fonts/opentype/urw-base35/URWGothic-BookOblique.otf	0	URW Gothic	Book Oblique
+/usr/share/fonts/opentype/urw-base35/URWGothic-Demi.otf	0	URW Gothic	Demi
+/usr/share/fonts/opentype/urw-base35/URWGothic-DemiOblique.otf	0	URW Gothic	Demi Oblique
+/usr/share/fonts/opentype/urw-base35/Z003-MediumItalic.otf	0	Z003	Medium Italic
+/usr/share/fonts/truetype/dejavu/DejaVuMathTeXGyre.ttf	0	DejaVu Math TeX Gyre	Regular
+/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf	0	DejaVu Sans	Bold
+/usr/share/fonts/truetype/dejavu/DejaVuSans-BoldOblique.ttf	0	DejaVu Sans	Bold Oblique
+/usr/share/fonts/truetype/dejavu/DejaVuSans-ExtraLight.ttf	0	DejaVu Sans	ExtraLight
+/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf	0	DejaVu Sans	Oblique
+/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf	0	DejaVu Sans	Book
+/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf	0	DejaVu Sans	Condensed Bold
+/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-BoldOblique.ttf	0	DejaVu Sans	Condensed Bold Oblique
+/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Oblique.ttf	0	DejaVu Sans	Condensed Oblique
+/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed.ttf	0	DejaVu Sans	Condensed
+/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf	0	DejaVu Sans Mono	Bold
+/usr/share/fonts/truetype/dejavu/DejaVuSansMono-BoldOblique.ttf	0	DejaVu Sans Mono	Bold Oblique
+/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Oblique.ttf	0	DejaVu Sans Mono	Oblique
+/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf	0	DejaVu Sans Mono	Book
+/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf	0	DejaVu Serif	Bold
+/usr/share/fonts/truetype/dejavu/DejaVuSerif-BoldItalic.ttf	0	DejaVu Serif	Bold Italic
+/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf	0	DejaVu Serif	Italic
+/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf	0	DejaVu Serif	Book
+/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Bold.ttf	0	DejaVu Serif	Condensed Bold
+/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-BoldItalic.ttf	0	DejaVu Serif	Condensed Bold Italic
+/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed-Italic.ttf	0	DejaVu Serif	Condensed Italic
+/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed.ttf	0	DejaVu Serif	Condensed
+/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf	0	Droid Sans Fallback	Regular
+/usr/share/fonts/truetype/freefont/FreeMono.ttf	0	FreeMono	Regular
+/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf	0	FreeMono	Bold
+/usr/share/fonts/truetype/freefont/FreeMonoBoldOblique.ttf	0	FreeMono	Bold Oblique
+/usr/share/fonts/truetype/freefont/FreeMonoOblique.ttf	0	FreeMono	Oblique
+/usr/share/fonts/truetype/freefont/FreeSans.ttf	0	FreeSans	Regular
+/usr/share/fonts/truetype/freefont/FreeSansBold.ttf	0	FreeSans	Bold
+/usr/share/fonts/truetype/freefont/FreeSansBoldOblique.ttf	0	FreeSans	Bold Oblique
+/usr/share/fonts/truetype/freefont/FreeSansOblique.ttf	0	FreeSans	Oblique
+/usr/share/fonts/truetype/freefont/FreeSerif.ttf	0	FreeSerif	Regular
+/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf	0	FreeSerif	Bold
+/usr/share/fonts/truetype/freefont/FreeSerifBoldItalic.ttf	0	FreeSerif	Bold Italic
+/usr/share/fonts/truetype/freefont/FreeSerifItalic.ttf	0	FreeSerif	Italic
+/usr/share/fonts/truetype/liberation/LiberationMono-Bold.ttf	0	Liberation Mono	Bold
+/usr/share/fonts/truetype/liberation/LiberationMono-BoldItalic.ttf	0	Liberation Mono	Bold Italic
+/usr/share/fonts/truetype/liberation/LiberationMono-Italic.ttf	0	Liberation Mono	Italic
+/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf	0	Liberation Mono	Regular
+/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf	0	Liberation Sans	Bold
+/usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf	0	Liberation Sans	Bold Italic
+/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf	0	Liberation Sans	Italic
+/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf	0	Liberation Sans	Regular
+/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Bold.ttf	0	Liberation Sans Narrow	Bold
+/usr/share/fonts/truetype/liberation/LiberationSansNarrow-BoldItalic.ttf	0	Liberation Sans Narrow	Bold Italic
+/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Italic.ttf	0	Liberation Sans Narrow	Italic
+/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Regular.ttf	0	Liberation Sans Narrow	Regular
+/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf	0	Liberation Serif	Bold
+/usr/share/fonts/truetype/liberation/LiberationSerif-BoldItalic.ttf	0	Liberation Serif	Bold Italic
+/usr/share/fonts/truetype/liberation/LiberationSerif-Italic.ttf	0	Liberation Serif	Italic
+/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf	0	Liberation Serif	Regular
+/usr/share/fonts/truetype/noto/NotoMono-Regular.ttf	0	Noto Mono	Regular
+/usr/share/fonts/truetype/noto/NotoSansMono-Bold.ttf	0	Noto Sans Mono	Bold
+/usr/share/fonts/truetype/noto/NotoSansMono-Regular.ttf	0	Noto Sans Mono	Regular
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	0	Nunito Sans	
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	0	Nunito Sans	12pt ExtraLight Italic
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	131072	Nunito Sans	Light Italic
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	196608	Nunito Sans	Italic
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	262144	Nunito Sans	Medium Italic
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	327680	Nunito Sans	SemiBold Italic
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	393216	Nunito Sans	Bold Italic
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	458752	Nunito Sans	ExtraBold Italic
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf	524288	Nunito Sans	Black Italic
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	0	Nunito Sans	
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	0	Nunito Sans	12pt ExtraLight
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	131072	Nunito Sans	Light
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	196608	Nunito Sans	Regular
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	262144	Nunito Sans	Medium
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	327680	Nunito Sans	SemiBold
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	393216	Nunito Sans	Bold
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	458752	Nunito Sans	ExtraBold
+/usr/share/fonts/truetype/nunito-sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf	524288	Nunito Sans	Black
+/usr/share/fonts/type1/urw-base35/C059-BdIta.t1	0	C059	Bold Italic
+/usr/share/fonts/type1/urw-base35/C059-Bold.t1	0	C059	Bold
+/usr/share/fonts/type1/urw-base35/C059-Italic.t1	0	C059	Italic
+/usr/share/fonts/type1/urw-base35/C059-Roman.t1	0	C059	Roman
+/usr/share/fonts/type1/urw-base35/D050000L.t1	0	D050000L	Regular
+/usr/share/fonts/type1/urw-base35/NimbusMonoPS-Bold.t1	0	Nimbus Mono PS	Bold
+/usr/share/fonts/type1/urw-base35/NimbusMonoPS-BoldItalic.t1	0	Nimbus Mono PS	Bold Italic
+/usr/share/fonts/type1/urw-base35/NimbusMonoPS-Italic.t1	0	Nimbus Mono PS	Italic
+/usr/share/fonts/type1/urw-base35/NimbusMonoPS-Regular.t1	0	Nimbus Mono PS	Regular
+/usr/share/fonts/type1/urw-base35/NimbusRoman-Bold.t1	0	Nimbus Roman	Bold
+/usr/share/fonts/type1/urw-base35/NimbusRoman-BoldItalic.t1	0	Nimbus Roman	Bold Italic
+/usr/share/fonts/type1/urw-base35/NimbusRoman-Italic.t1	0	Nimbus Roman	Italic
+/usr/share/fonts/type1/urw-base35/NimbusRoman-Regular.t1	0	Nimbus Roman	Regular
+/usr/share/fonts/type1/urw-base35/NimbusSans-Bold.t1	0	Nimbus Sans	Bold
+/usr/share/fonts/type1/urw-base35/NimbusSans-BoldItalic.t1	0	Nimbus Sans	Bold Italic
+/usr/share/fonts/type1/urw-base35/NimbusSans-Italic.t1	0	Nimbus Sans	Italic
+/usr/share/fonts/type1/urw-base35/NimbusSans-Regular.t1	0	Nimbus Sans	Regular
+/usr/share/fonts/type1/urw-base35/NimbusSansNarrow-Bold.t1	0	Nimbus Sans Narrow	Bold
+/usr/share/fonts/type1/urw-base35/NimbusSansNarrow-BoldOblique.t1	0	Nimbus Sans Narrow	Bold Oblique
+/usr/share/fonts/type1/urw-base35/NimbusSansNarrow-Oblique.t1	0	Nimbus Sans Narrow	Oblique
+/usr/share/fonts/type1/urw-base35/NimbusSansNarrow-Regular.t1	0	Nimbus Sans Narrow	Regular
+/usr/share/fonts/type1/urw-base35/P052-Bold.t1	0	P052	Bold
+/usr/share/fonts/type1/urw-base35/P052-BoldItalic.t1	0	P052	Bold Italic
+/usr/share/fonts/type1/urw-base35/P052-Italic.t1	0	P052	Italic
+/usr/share/fonts/type1/urw-base35/P052-Roman.t1	0	P052	Roman
+/usr/share/fonts/type1/urw-base35/StandardSymbolsPS.t1	0	Standard Symbols PS	Regular
+/usr/share/fonts/type1/urw-base35/URWBookman-Demi.t1	0	URW Bookman	Demi
+/usr/share/fonts/type1/urw-base35/URWBookman-DemiItalic.t1	0	URW Bookman	Demi Italic
+/usr/share/fonts/type1/urw-base35/URWBookman-Light.t1	0	URW Bookman	Light
+/usr/share/fonts/type1/urw-base35/URWBookman-LightItalic.t1	0	URW Bookman	Light Italic
+/usr/share/fonts/type1/urw-base35/URWGothic-Book.t1	0	URW Gothic	Book
+/usr/share/fonts/type1/urw-base35/URWGothic-BookOblique.t1	0	URW Gothic	Book Oblique
+/usr/share/fonts/type1/urw-base35/URWGothic-Demi.t1	0	URW Gothic	Demi
+/usr/share/fonts/type1/urw-base35/URWGothic-DemiOblique.t1	0	URW Gothic	Demi Oblique
+/usr/share/fonts/type1/urw-base35/Z003-MediumItalic.t1	0	Z003	Medium Italic

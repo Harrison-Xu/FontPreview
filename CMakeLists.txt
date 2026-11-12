@@ -6,7 +6,7 @@
 
 cmake_minimum_required(VERSION 3.31)
 
-project(fontpreview VERSION 0.4.6 LANGUAGES C CXX)
+project(fontpreview VERSION 0.4.7 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -549,9 +549,16 @@ target_link_libraries(${PROJECT_NAME}
 # Package deb
 include(cmake/cm0-package.cmake)
 
-option(FONTPREVIEW_BUILD_TESTS "Build desktop audio, font, and keyboard regression checks" OFF)
+option(FONTPREVIEW_BUILD_TESTS "Build font checks and desktop audio/keyboard regression checks" OFF)
 set(FONTPREVIEW_TEST_FONT "" CACHE FILEPATH "Locally installed font for cache regression checks")
 set(FONTPREVIEW_TEST_UI_ASSETS "" CACHE PATH "External assets with existing Noto CJK fonts for keyboard checks")
+if(FONTPREVIEW_BUILD_TESTS)
+    enable_testing()
+    add_executable(fontpreview_font_regression tests/font_regression.cpp)
+    target_link_libraries(fontpreview_font_regression PRIVATE ${PROJECT_NAME}_core)
+    add_test(NAME font_regression COMMAND fontpreview_font_regression)
+    set_tests_properties(font_regression PROPERTIES TIMEOUT 60)
+endif()
 if(USE_DESKTOP AND FONTPREVIEW_BUILD_TESTS)
     enable_testing()
     add_executable(fontpreview_regression tests/runtime_regression.cpp)

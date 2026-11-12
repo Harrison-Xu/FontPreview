@@ -205,16 +205,19 @@ const char* PreviewModel::font_file_name() const {
 
     switch (font_) {
         case PreviewFont::NotoCjk:
-            if (light) return "";
             switch (typeface_) {
                 case PreviewTypeface::Sans:
                 case PreviewTypeface::SansItalic:
+                    if (light) return "NotoSansCJK-Light.ttc";
                     return bold ? "NotoSansCJK-Bold.ttc" : "NotoSansCJK-Regular.ttc";
                 case PreviewTypeface::Serif:
                 case PreviewTypeface::SerifItalic:
+                    if (light) return "NotoSerifCJK-Light.ttc";
                     return bold ? "NotoSerifCJK-Bold.ttc" : "NotoSerifCJK-Regular.ttc";
                 case PreviewTypeface::Mono:
                 case PreviewTypeface::MonoItalic:
+                    // The Light collection has only five proportional faces.
+                    if (light) return "";
                     return bold ? "NotoSansCJK-Bold.ttc" : "NotoSansCJK-Regular.ttc";
             }
             break;
@@ -242,7 +245,10 @@ const char* PreviewModel::font_file_name() const {
             if (italic) return "/usr/share/fonts/opentype/inter/Inter-Italic.otf";
             return "/usr/share/fonts/opentype/inter/Inter-Regular.otf";
         case PreviewFont::DejaVu:
-            if (light) return "";
+            if (light) {
+                return typeface_ == PreviewTypeface::Sans
+                    ? "/usr/share/fonts/truetype/dejavu/DejaVuSans-ExtraLight.ttf" : "";
+            }
             switch (typeface_) {
                 case PreviewTypeface::Sans:
                 case PreviewTypeface::SansItalic:

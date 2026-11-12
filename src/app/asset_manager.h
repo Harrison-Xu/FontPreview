@@ -20,7 +20,8 @@ namespace app {
 class AssetManager {
 public:
     explicit AssetManager(std::string app_name = default_app_name(),
-                          std::filesystem::path cmake_assets_root = default_cmake_assets_root());
+                          std::filesystem::path cmake_assets_root = default_cmake_assets_root(),
+                          std::vector<std::filesystem::path> system_font_directories = default_system_font_directories());
     ~AssetManager();
 
     AssetManager(const AssetManager&) = delete;
@@ -28,6 +29,7 @@ public:
 
     static std::string default_app_name();
     static std::filesystem::path default_cmake_assets_root();
+    static std::vector<std::filesystem::path> default_system_font_directories();
 
     const std::vector<std::filesystem::path>& roots() const;
     std::filesystem::path resolve(const std::filesystem::path& relative_path) const;
@@ -46,6 +48,7 @@ private:
     void add_root_if_valid(std::filesystem::path path);
 
     std::vector<std::filesystem::path> roots_;
+    std::vector<std::filesystem::path> system_font_directories_;
     std::vector<std::unique_ptr<LoadedFont>> loaded_fonts_;
 };
 

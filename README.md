@@ -54,9 +54,9 @@ The application selects the correct regional face inside each collection: JP for
 
 The fonts are licensed under the SIL Open Font License 1.1. Installed CardputerZero fonts and their copyright information are managed by Debian's `fonts-noto-cjk` package.
 
-Go, Inter, DejaVu, and JetBrains Mono are read from their existing Debian system paths. The app declares no font packages in `Depends`, `Recommends`, or `Suggests`. It only previews faces already present on the device: unavailable files are reported in the preview, and unsupported typeface/weight combinations remain explicit rather than silently substituting another font. The system image must supply the Noto CJK Sans Regular and Bold files needed by the interface; missing Serif or other preview faces do not prevent startup. No font installation is performed to repair an incomplete system image.
+Go, Inter, DejaVu, and JetBrains Mono are read from existing system paths. Debian paths take priority; the resolver also checks `/usr/share/APPLaunch/share/font/` and `/usr/share/factory_test/fonts/`. Factory Inter Regular/Bold use lowercase `inter-regular.ttf` / `inter-bold.ttf` filenames. See the [factory image font inventory](docs/cardputerzero-factory-fonts.zh-CN.md) for every observed font path and collection index. The app declares no font packages in `Depends`, `Recommends`, or `Suggests`. It only previews faces already present on the device: unavailable files are reported in the preview, and unsupported typeface/weight combinations remain explicit rather than silently substituting another font. The system image must supply the Noto CJK Sans Regular and Bold files needed by the interface; missing Serif or other preview faces do not prevent startup. No font installation is performed to repair an incomplete system image.
 
-Inter and JetBrains Mono support Light and Light Italic when those files exist. Noto CJK italic selections use FreeType's synthetic italic rendering because Noto CJK does not ship native italic faces.
+Noto CJK Sans/Serif support Light when the corresponding collection exists; Noto Mono Light is unavailable because the Light collection contains no Mono faces. DejaVu Sans Light uses the real ExtraLight upright face. Inter and JetBrains Mono support Light and Light Italic when those files exist. On the inspected factory image, Inter and JetBrains Mono provide only upright Regular/Bold among the app’s selectable styles; Go is absent. Noto CJK italic selections use FreeType's synthetic italic rendering because Noto CJK does not ship native italic faces.
 
 ## Character coverage
 
@@ -80,7 +80,7 @@ cmake --build --preset cp0-cross-rel
 cpack --preset cp0-cross-deb
 ```
 
-The package is written to `dist/fontpreview_0.4.6-1_arm64.deb` and only reads fonts already on the device.
+The package is written to `dist/fontpreview_0.4.7-1_arm64.deb` and only reads fonts already on the device.
 
 ## Installation and publishing
 
@@ -92,7 +92,7 @@ are required or suggested; the system's existing fonts are left untouched.
 If a store installation stalls while downloading or resolving dependencies,
 check the device's network, configured APT repositories, available storage, and
 package-manager output. From a device terminal, installing a copied package with
-`sudo apt install ./fontpreview_0.4.6-1_arm64.deb` exposes the actual error.
+`sudo apt install ./fontpreview_0.4.7-1_arm64.deb` exposes the actual error.
 Do not run a second installation while another package-manager process is active.
 The application itself should be launched as the normal user.
 
@@ -101,8 +101,16 @@ The existing share code `FONT` is retained. To submit the rebuilt package, run
 this command from the project root:
 
 ```shell
-~/M5Stack_Repos/AppBuilder/czdev publish --deb ./dist/fontpreview_0.4.6-1_arm64.deb
+~/M5Stack_Repos/AppBuilder/czdev publish --deb ./dist/fontpreview_0.4.7-1_arm64.deb
 ```
+
+## 0.4.7 changes
+
+- Find factory Inter Regular/Bold TTFs and Launcher JetBrains Mono Regular/Bold without installing fonts.
+- Enable Noto CJK Sans/Serif Light and DejaVu Sans ExtraLight; keep unsupported Mono Light explicit.
+- Keep exact family, weight and style when resolving alternate file paths.
+- Change store author and Debian maintainer/vendor to HarrisonXu.
+- Record the factory font inventory and add host/device font regression checks.
 
 ## 0.4.6 changes
 
